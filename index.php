@@ -1,15 +1,16 @@
+
 <?php
 /*
-Plugin Name: My Name Is
+Plugin Name: Design Message
 */
-function name_shortcodes_init()
+function quote_shortcodes_init()
 {
-    function name_shortcode($atts = [], $content = null)
+    function quote_shortcode($atts = [], $content = null)
     {
-        
-        $content .= "Chandana - fun fact: I have a Masters in Project Management";
+        $oQuote = json_decode(file_get_contents("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1"));   
+        $content .= $oQuote[0]->{'content'};
         return $content;
     }
-    add_shortcode('fun-fact-plugin', 'name_shortcode');
+    add_shortcode('design-message-of-the-day-plugin', 'quote_shortcode');
 }
-add_action('init', 'name_shortcodes_init');
+add_action('init', 'quote_shortcodes_init');
