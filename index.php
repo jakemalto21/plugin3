@@ -11,7 +11,7 @@ function wporg_shortcodes_init()
     function wporg_shortcode($atts = [], $content = null)
     {
             $content .= <<<EOT
-            <h1Name</h1>
+            <h1>Name</h1>
 			<h1>######</h1>
             
 EOT;
