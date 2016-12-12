@@ -10,6 +10,6 @@ function name_shortcodes_init()
         $content .= "Chandana - fun fact: I have a Masters in Project Management";
         return $content;
     }
-    add_shortcode('name-student-plugin', 'name_shortcode');
+    add_shortcode('fun-fact-plugin', 'name_shortcode');
 }
 add_action('init', 'name_shortcodes_init');
